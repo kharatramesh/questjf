@@ -12,7 +12,7 @@ jobs:
         env:
            JF_ARTIFACTORY_1: ${{ secrets.artifactory_token_1 }}
       - run: |
-          touch 1.txt 
+          echo 123 > 1.txt 
           jfrog --version
           jfrog c use priar
           jfrog rt ping
