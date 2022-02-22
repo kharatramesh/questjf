@@ -1,0 +1,20 @@
+name: uploading Artifacts
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  testing-jfrog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jfrog/setup-jfrog-cli@v1
+        env:
+           JF_ARTIFACTORY_1: ${{ secrets.artifactory_token_1 }}
+      - run: |
+          touch 1.txt 
+          jfrog --version
+          jfrog c use priar
+          jfrog rt ping
+          jfrog rt u 1.txr artifacts/
+          
