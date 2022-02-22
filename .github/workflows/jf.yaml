@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: homework
-          path: /tmp/1.txt
+          
