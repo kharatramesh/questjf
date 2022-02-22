@@ -23,3 +23,14 @@ jobs:
           mkdir priar
           cd priar
           curl -H "X-JFrog-Art-Api:AKCp8kqqmokih18TMm2CaAXwcJRsgLhcqPqAWDY6gwa55Aa8FYYUK2QseceAPKg9UjE5v1XPi" -O "https://priar.jfrog.io/artifactory/priar/one.txt"
+      
+      - name: Upload 1.txt file to folder called as homework
+        uses: actions/upload-artifact@v2
+        with:
+          name: homework
+          path: 1.txt
+      - name: Download 1.txt file from folder called as homework
+        uses: actions/upload-artifact@v2
+        with:
+          name: homework
+          path: /tmp/1.txt
